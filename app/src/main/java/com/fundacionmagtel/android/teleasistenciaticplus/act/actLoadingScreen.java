@@ -9,7 +9,6 @@ import com.fundacionmagtel.android.teleasistenciaticplus.act.main.actMain;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -36,10 +35,6 @@ public class actLoadingScreen extends Activity implements Constants {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("app", "pantalla de carga");
-        /////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////
         /// Operaciones cosméticas sobre la UI de la actividad

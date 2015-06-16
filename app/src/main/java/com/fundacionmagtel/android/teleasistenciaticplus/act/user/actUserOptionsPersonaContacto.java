@@ -18,7 +18,6 @@ import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.phone.PhoneContacts;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 
 import java.util.Map;
 
@@ -29,10 +28,6 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_user_options_persona_contacto);
         getActionBar().setIcon(R.drawable.config_wheel);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "personas contacto");
-        /////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////
         /// Leer los valores de persona s de contacto
@@ -129,10 +124,8 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
      */
     public void user_options_persona_contacto_text_click_2(View view) {
         //Abrir la lista de contactos
-      //  Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-      //  startActivityForResult(intent, 1);
-
-        Toast.makeText(this,"Esta versión (Beta 1.0-piloto) sólo admite un contacto.",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(intent, 1);
     }
 
     /**
@@ -142,10 +135,8 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
      */
     public void user_options_persona_contacto_text_click_3(View view) {
         //Abrir la lista de contactos
-     //   Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
-     //   startActivityForResult(intent, 2);
-
-        Toast.makeText(this,"Esta versión (Beta 1.0-piloto) sólo admite un contacto.",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        startActivityForResult(intent, 2);
     }
 
     /**

@@ -19,7 +19,6 @@ import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 
 public class actUserOptionsZonaSegura extends Activity implements ServiceConnection, Constants {
 
@@ -34,10 +33,6 @@ public class actUserOptionsZonaSegura extends Activity implements ServiceConnect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_user_options_zona_segura);
         getActionBar().setIcon(R.drawable.config_wheel);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "zona segura");
-        /////////////////////////////////////////////////////
 
         // Comprobacion de que la zona segura este activa o no
 

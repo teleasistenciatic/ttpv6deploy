@@ -7,11 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 
 /**
  * Actividad que muestra las distintas opciones del menú de configuración de usuario
@@ -27,10 +25,6 @@ public class actUserOptions extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "opciones usuario");
-        /////////////////////////////////////////////////////
 
         /////////////////////////////////////////////////////////////////////
         // Creación del UI de ListView con los subapartados de Opciones de usuario
@@ -50,8 +44,7 @@ public class actUserOptions extends Activity {
                 "Detección de caidas", //2
                 "Zona segura", //3
                 "Monitor de Batería", //4
-                "Pilotaje", //5
-                "Manos Libres" //6
+                "Manos Libres" //5
         };
 
         // identificadores de imagenes para el ListView
@@ -99,10 +92,7 @@ public class actUserOptions extends Activity {
                     case 4: //"Monitor de batería"
                         actToLoad = actUserOptionsMonitorBateria.class;
                         break;
-                    case 5: //"Pilotaje"
-                        actToLoad = actUserOptionsPilotaje.class;
-                        break;
-                    case 6: //"Manos libres"
+                    case 5: //"Manos libres"
                         actToLoad = actUserOptionsManosLibres.class;
                         break;
                 }

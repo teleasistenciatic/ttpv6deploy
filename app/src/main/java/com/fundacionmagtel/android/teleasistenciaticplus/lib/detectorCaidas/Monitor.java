@@ -6,7 +6,6 @@ import android.hardware.SensorEvent;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sms.SmsLauncher;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.PlaySound;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.DebugLevel;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.TipoAviso;
@@ -205,27 +204,15 @@ class Monitor implements Constants {
                         AppLog.i(TAG,"Monitor | Sentado");
                         if(Constants.DEBUG_LEVEL == DebugLevel.DEBUG) PlaySound.play(R.raw.sentado);
 
-                        /////////////////////////////////////////////////////
-                        StatsFileLogTextGenerator.write("aviso", "sentado");
-                        /////////////////////////////////////////////////////
-
                         break;
                     case 2:
                         AppLog.i(TAG,"Monitor | Correr");
                         if(Constants.DEBUG_LEVEL == DebugLevel.DEBUG) PlaySound.play(R.raw.correr);
 
-                        /////////////////////////////////////////////////////
-                        StatsFileLogTextGenerator.write("aviso", "correr");
-                        /////////////////////////////////////////////////////
-
                         break;
                     case 3:
                         AppLog.i(TAG,"Monitor | Golpe");
                         if(Constants.DEBUG_LEVEL == DebugLevel.DEBUG) PlaySound.play(R.raw.golpe);
-
-                        /////////////////////////////////////////////////////
-                        StatsFileLogTextGenerator.write("aviso", "golpe");
-                        /////////////////////////////////////////////////////
 
                         break;
                     case 4:

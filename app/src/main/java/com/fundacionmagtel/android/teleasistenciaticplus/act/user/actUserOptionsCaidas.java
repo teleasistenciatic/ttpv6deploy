@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.detectorCaidas.ServicioMuestreador;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
 
@@ -31,10 +30,6 @@ public class actUserOptionsCaidas extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "caidas");
-        /////////////////////////////////////////////////////
 
         setContentView(R.layout.activity_act_user_options_caidas);
         getActionBar().setIcon(R.drawable.config_wheel);

@@ -15,7 +15,6 @@ import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.bateria.MonitorBateria;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.main.actMain;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 
 /**
  * Actividad de configuración y consulta del monitor de batería.
@@ -39,10 +38,6 @@ public class actUserOptionsMonitorBateria extends Activity implements View.OnCli
     {
         // Acciones a ejecutar al crear la actividad
         super.onCreate(savedInstanceState);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "bateria");
-        /////////////////////////////////////////////////////
 
         setContentView(R.layout.layout_user_option_monitor_bateria);
 

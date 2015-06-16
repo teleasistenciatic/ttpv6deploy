@@ -31,7 +31,6 @@ import com.fundacionmagtel.android.teleasistenciaticplus.lib.sms.SmsLauncher;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.ManosLibres;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.PlaySound;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.SintetizadorVoz;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.DebugLevel;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.GlobalData;
@@ -76,10 +75,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("app", "iniciada IMEI:" + GlobalData.getImei());
-        /////////////////////////////////////////////////////
-
         instanciaActMain = this; //Se utiliza para obtener una instancia desde otra actividad
 
         super.onCreate(savedInstanceState);
@@ -97,15 +92,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         boton_rojo_clicks = 0;
         boton_rojo_cuenta_atras_activa = false;
         boton_rojo_cancelar_envio = false;
-
-        ////////////////////////////////////////////////////////////////////////
-        // Si no hay un numero máximo de mensajes enviados, se crea el por defecto
-        ////////////////////////////////////////////////////////////////////////
-        String NumeroMensajesPorDefecto = new AppSharedPreferences().getPreferenceData( Constants.SMS_ENVIADOS_SHARED_PREFERENCES );
-        if ( NumeroMensajesPorDefecto.length() == 0 ) {
-            new AppSharedPreferences().setPreferenceData(Constants.SMS_ENVIADOS_SHARED_PREFERENCES, String.valueOf(0) );
-        }
-        /////////////////////////////////////////////////////////////////////////
 
         //Damos la bienvenida
         if ( (Constants.PLAY_SOUNDS) && (Constants.PLAY_BIENVENIDO_SOUND) ) {
@@ -160,21 +146,15 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             Intent intentA= new Intent(this,ServicioMuestreador.class);
             startService(intentA);
             AppLog.i(TAG, "Caidas activo");
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("caidas", "servicio iniciado");
-            /////////////////////////////////////////////////////
+
         }else if( caidasActivas.equals(Constants.DETECTOR_CAIDAS_DESACTIVAR)){  //no hago nada.
             AppLog.i(TAG,"Caidas inactivo");
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("caidas", "servicio inactivo");
-            /////////////////////////////////////////////////////
+
         }else{ //no existe la preferencia. crear la referencia pero no arranco el servicio.
             mispreferences.setPreferenceData(Constants.DETECTOR_CAIDAS_ARRANCAR_AL_INICIO,Constants.DETECTOR_CAIDAS_DESACTIVAR);
 
             AppLog.i(TAG, "caidas creado, servicio parado ");
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("caidas", "no existe preferencia, servicio parado");
-            /////////////////////////////////////////////////////
+
         }
 
         ////////////////////////////////////////////////
@@ -188,13 +168,7 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             startService(intentA);
 
             AppLog.i(TAG, "Servicio Zona Segura cargado al inicio ");
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("zona segura", "servicio iniciado");
-            /////////////////////////////////////////////////////
-        } else {
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("zona segura", "servicio no iniciado");
-            /////////////////////////////////////////////////////
+
         }
 
 
@@ -205,16 +179,10 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         try {
             monBat = new MonitorBateria();
 
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("bateria", "monitor iniciado");
-            /////////////////////////////////////////////////////
-
         } catch (Exception e) {
             e.printStackTrace();
             AppLog.i("Error en main", "Efectivamente se da aquí -> e = " + e.getMessage() + ", " + e.getLocalizedMessage());
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("bateria", "no se ha podido monitorizar la bateria");
-            /////////////////////////////////////////////////////
+
         }
 
         if(monBat.hayDatos()) {
@@ -285,17 +253,11 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_act_main_exit_app) {
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("menu", "boton salir pulsado");
-            /////////////////////////////////////////////////////
             finish();
         } else if (id == R.id.menu_act_main_debug_screen) {
             Intent intent = new Intent(this, actMainDebug.class);
             startActivity(intent);
         } else if (id == R.id.menu_act_user_options) {
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("menu", "boton configuracion pulsado");
-            /////////////////////////////////////////////////////
             Intent intent = new Intent(this, actUserOptions.class);
             startActivity(intent);
         }
@@ -321,10 +283,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             sinManos.desenchufaElAltavoz();
             sinManos.desregistraReceiver();
         }
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("app", "cerrada");
-        /////////////////////////////////////////////////////
 
         super.onDestroy();
     }
@@ -362,10 +320,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
      */
     public void configuration_action_button(View view) {
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "configuracion pulsado");
-        /////////////////////////////////////////////////////
-
         Intent intent = new Intent(this, actUserOptions.class);
 
         startActivity(intent);
@@ -385,10 +339,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
      */
     public void backtohome_action_button(View view) {
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "volver a casa pulsado");
-        /////////////////////////////////////////////////////
-
         // ¿Hay datos de Zona Segura/ Hogar?
         AppSharedPreferences misAppSharedPreferences = new AppSharedPreferences();
 
@@ -398,10 +348,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
 
             String location= hogar[0] + ", " + hogar[1] ; //"36.993150, -2.657814";
 
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("boton", "volver a casa con datos: " + hogar[0] + ", " + hogar[1]);
-            /////////////////////////////////////////////////////
-
             Intent mapIntent=new Intent(Intent.ACTION_VIEW, Uri.parse("google.navigation:q=" + location + "&mode=w"));
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
@@ -409,10 +355,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         } else {
 
             Toast.makeText(getBaseContext(), "No hay datos de zona segura", Toast.LENGTH_LONG).show();
-
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("boton", "volver a casa error por ausencia de datos");
-            /////////////////////////////////////////////////////
 
         }
 
@@ -428,26 +370,14 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
 
         AppSharedPreferences miAppSharedPreferences = new AppSharedPreferences();
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "llamada pulsado");
-        /////////////////////////////////////////////////////
-
         if ( !miAppSharedPreferences.hasPersonasContacto() ) {
 
             Toast.makeText(getBaseContext(), "Error: no existen personas de contacto", Toast.LENGTH_LONG).show();
-
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("boton", "llamada pulsado error sin contactos");
-            /////////////////////////////////////////////////////
 
         } else {
             //Existen personas de contacto
             // Se obtiene la primera persona de contacto
             miAppSharedPreferences.getFirstTelefonoContacto();
-
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("boton", "llamada llamando contacto");
-            /////////////////////////////////////////////////////
 
             String url = "tel:" + miAppSharedPreferences.getFirstTelefonoContacto();
             Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse(url));
@@ -462,10 +392,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
      * @param view vista del botón.
      */
     public void showermode_action_button(View view) {
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "modo ducha pulsado");
-        /////////////////////////////////////////////////////
 
         Intent intent = new Intent(this, actModoDucha.class);
 
@@ -488,10 +414,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
      */
     public void familiar_action_button(View view) {
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "contactos pulsado");
-        /////////////////////////////////////////////////////
-
         Intent intent = new Intent(this, actUserOptionsPersonaContacto.class);
 
         startActivity(intent);
@@ -502,7 +424,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
 
         }
     }
-
 
 
 
@@ -525,9 +446,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         //2. Se les envía SMS
         //3. Se muestra un mensaje de indicación
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "alerta pulsado");
-        /////////////////////////////////////////////////////
 
         boton_rojo_clicks++;
 
@@ -549,10 +467,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             Boolean hayPersonasContactoConTelefono = new AppSharedPreferences().hasPersonasContacto();
 
             if (!hayPersonasContactoConTelefono) {
-
-                /////////////////////////////////////////////////////
-                StatsFileLogTextGenerator.write("boton", "alerta pulsado error no hay contactos");
-                /////////////////////////////////////////////////////
 
             /*
             /////////
@@ -630,9 +544,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             //Si es el segundo click comprobamos si la acuenta atrás está activa para deternela y cancelar el envío del SMS
             if (boton_rojo_clicks == 2) {
 
-                /////////////////////////////////////////////////////
-                StatsFileLogTextGenerator.write("boton", "alerta pulsado cuenta atras cancelada");
-                /////////////////////////////////////////////////////
                 AppLog.i(TAG,"Segundo Click");
                 AppLog.i(TAG,"Click: " + boton_rojo_clicks);
 
@@ -654,9 +565,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
                 }
             }
             else {
-                /////////////////////////////////////////////////////
-                StatsFileLogTextGenerator.write("boton", "alerta pulsado mas de dos click ignorados");
-                /////////////////////////////////////////////////////
                 //se han hecho más de dos clicks, así que lo ignoramos
                 AppLog.i(TAG,"CLICK sin efecto");
                 boton_rojo_clicks--;
@@ -677,17 +585,9 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         //2. Se les envía SMS
         //3. Se muestra un mensaje de indicación
 
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("boton", "tranquilidad pulsado");
-        /////////////////////////////////////////////////////
-
         Boolean hayPersonasContactoConTelefono = new AppSharedPreferences().hasPersonasContacto();
 
         if (!hayPersonasContactoConTelefono) {
-
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("boton", "tranquilidad pulsado no hay contactos");
-            /////////////////////////////////////////////////////
 
             AppDialog newFragment = AppDialog.newInstance(AppDialog.tipoDialogo.SIMPLE,1,
                     "Contactos no disponibles",

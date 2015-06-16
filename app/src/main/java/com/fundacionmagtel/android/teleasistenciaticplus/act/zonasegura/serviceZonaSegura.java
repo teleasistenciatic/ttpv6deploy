@@ -24,13 +24,11 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.filesystem.FileOperation;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppTime;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sms.SmsLauncher;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.PlaySound;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.DebugLevel;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.TipoAviso;
@@ -79,7 +77,6 @@ public class serviceZonaSegura extends Service implements
         super.onCreate();
         AppLog.d(TAG, "Servicio Zona Segura iniciado.");
 
-        FileOperation.fileLogErase(Constants.DEBUG_ZONA_SEGURA_LOG_FILE);
 
         /*Toast.makeText(getBaseContext(), (String) "Servicio iniciado",
                 Toast.LENGTH_SHORT).show();*/
@@ -382,10 +379,6 @@ public class serviceZonaSegura extends Service implements
 
                 AppLog.i(TAG,"SMS de aviso de Zona Segura enviado");
 
-                /////////////////////////////////////////////////////
-                StatsFileLogTextGenerator.write("zona segura", "ha salido zona segura");
-                /////////////////////////////////////////////////////
-
 
                 /////////////////////////////////////////////////
             }
@@ -404,11 +397,6 @@ public class serviceZonaSegura extends Service implements
                         Toast.LENGTH_LONG).show();
             }
 
-            if ( Constants.STATS_LOG_ZONA_SEGURA_GPS ) {
-                /////////////////////////////////////////////////////
-                StatsFileLogTextGenerator.writeGps("zona segura", (String) mostrar);
-                /////////////////////////////////////////////////////
-            }
 
         } else {
             AppLog.d(TAG, "location is null ...............");

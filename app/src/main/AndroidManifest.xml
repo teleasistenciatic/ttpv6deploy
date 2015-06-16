@@ -165,11 +165,6 @@
         </activity>
 
         <activity
-            android:name=".act.user.actUserOptionsPilotaje"
-            android:label="@string/title_activity_act_options_pilotaje" >
-        </activity>
-
-        <activity
             android:name=".act.user.actUserOptionsMonitorBateria"
             android:label="@string/title_activity_act_user_options_monitor_bateria"
             android:screenOrientation="portrait" >

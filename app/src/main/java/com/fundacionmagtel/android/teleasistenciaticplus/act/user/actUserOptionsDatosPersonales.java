@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppDialog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
 import com.fundacionmagtel.android.teleasistenciaticplus.presentador.actStaff;
 
 
@@ -30,10 +29,6 @@ public class actUserOptionsDatosPersonales extends FragmentActivity implements A
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        /////////////////////////////////////////////////////
-        StatsFileLogTextGenerator.write("configuracion", "datos personales");
-        /////////////////////////////////////////////////////
 
         setContentView(R.layout.layout_user_options_datos_personales);
         getActionBar().setIcon(R.drawable.config_wheel);

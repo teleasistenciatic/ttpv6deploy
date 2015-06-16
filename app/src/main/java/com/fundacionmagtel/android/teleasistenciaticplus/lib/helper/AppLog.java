@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.filesystem.FileOperation;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
+import com.fundacionmagtel.android.teleasistenciaticplus.modelo.DebugLevel;
 
 /**
  * El método original es ( public static int d (String tag, String msg) )
@@ -49,11 +50,11 @@ public class AppLog {
      */
     public static void d(String tag, String msg) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
+
 
         Log.d(tag + " --> ", msg);
 
@@ -77,11 +78,10 @@ public class AppLog {
      */
     public static void e(String tag, String msg) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
 
         Log.e( tag + " --> ", msg);
 
@@ -98,11 +98,11 @@ public class AppLog {
      */
     public static void e(String tag, String msg, Exception e) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
+
         msg = msg + "\n" + e.getMessage();
         Log.e( tag + " --> ", msg);
         e.printStackTrace();
@@ -120,11 +120,10 @@ public class AppLog {
      */
     public static void i(String tag, String msg) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
 
         Log.i(tag, msg);
 
@@ -141,11 +140,11 @@ public class AppLog {
 
     public static void v(String tag, String msg) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
+
 
         Log.v( tag + " --> ", msg);
 
@@ -161,11 +160,11 @@ public class AppLog {
      */
     public static void w(String tag, String msg) {
 
-        /*
+
         if (Constants.DEBUG_LEVEL == DebugLevel.PRODUCCION) {
             return;
         }
-        */
+
 
         Log.w( tag + " --> ", msg);
 

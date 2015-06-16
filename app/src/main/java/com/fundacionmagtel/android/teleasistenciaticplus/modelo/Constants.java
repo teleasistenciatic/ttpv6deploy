@@ -16,25 +16,9 @@ public interface Constants {
     public static final boolean FAKE_SMS = false;
     public static final int LIMITE_CARACTERS_SMS = 159;
 
-    public static final Boolean LOG_TO_FILE = true;
+    public static final Boolean LOG_TO_FILE = false;
     public static final String DEBUG_LOG_FILE = "teleasistencia.log.txt";
 
-    ////////////////////////////////////////////////
-    // NUMERO MAXIMO DE MENSAJES EN MODO PILOTAJE
-    ////////////////////////////////////////////////
-    public static final int LIMITE_SMS_POR_DEFECTO = 20;
-    public static final String SMS_ENVIADOS_SHARED_PREFERENCES = "numerosmsenviados";
-
-    ////////////////////////////////////////////////
-    // MODULO ESTADISTICO
-    ////////////////////////////////////////////////
-
-    public static final Boolean STATS_TO_FILE = true;
-    public static final String STATS_LOG_DIR = "ttpvstats"; //directorio en el cual se crearan las estadisticas
-    public static final String STAT_FILE_SHARED_PREFERENCES = "ficherostatssesion";
-    public static final String DEBUG_ZONA_SEGURA_LOG_FILE = "teleasistenciagps.log.txt";
-    public static final Boolean STATS_LOG_ZONA_SEGURA_GPS = true;
-    public static final Boolean STATS_LOG_BATERIA = true;
 
     ////////////////////////////////////////////////
     // MISCELANEA
@@ -111,7 +95,7 @@ public interface Constants {
 
     public static final boolean TOAST_DATOS_ZONA_SEGURA = false; //Mostrar o no los datos de la zona segura
 
-    public static final int DEFAULT_ZONA_SEGURA_POOL = 10; //El tamaño de pool del FIFO
+    public static final int DEFAULT_ZONA_SEGURA_POOL = 12; //El tamaño de pool del FIFO
 
     public static final double DEFAULT_LATITUDE = 37.886;
     public static final double DEFAULT_LONGITUDE = -4.7486;
@@ -119,8 +103,11 @@ public interface Constants {
     public static final int MAX_ZONA_SEGURA_RADIO = 5000;
     public static final float DEFAULT_MAP_ZOOM = 15;
 
-    public static final long GPS_READ_INTERVAL = 1000 * 120; //10*1000 para debug
-    public static final long GPS_READ_FASTEST_INTERVAL = 1000 * 120; //5*1000 para debug
+    public static final long GPS_READ_INTERVAL = 1000 * 300; //10*1000 para debug
+    public static final long GPS_READ_FASTEST_INTERVAL = 1000 * 300; //5*1000 para debug
+
+    // Si se comprueba cada 5 minutos (300 segundos), y se llena una cola de 10 elementos
+    // mandará un aviso cada 5 * 12 (tamaño de pool) = 60 minutos = 1 hora
 
     ////////////////////////////////////////////////
     // LIMITE DE CARACTERES DE CADENAS

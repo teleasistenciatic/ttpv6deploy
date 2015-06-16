@@ -4,10 +4,8 @@ import android.telephony.SmsManager;
 import android.widget.Toast;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
-import com.fundacionmagtel.android.teleasistenciaticplus.modelo.GlobalData;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
+
 
 /**
  * Created by FESEJU on 19/03/2015.
@@ -61,35 +59,12 @@ public class SmsDispatcher implements Constants {
         try {
             if ( ! Constants.FAKE_SMS ) {
 
-                ////////////////////////////////////////////
-                // PILOTAJE numero máximo SMSs
-                ////////////////////////////////////////////
-                String mensajesEnviados = new AppSharedPreferences().getSmsEnviados();
 
-                int mEnviados = Integer.valueOf(mensajesEnviados);
-
-                if ( mEnviados < Constants.LIMITE_SMS_POR_DEFECTO ) {
-
-                    sms.sendTextMessage(phoneNumber, null, message, null, null);
-                    /////////////////////////////////////////////////////
-                    StatsFileLogTextGenerator.write("SMS", "enviado" + ":" + "[" + message + "]");
-                    /////////////////////////////////////////////////////
-
-                    new AppSharedPreferences().incrementaSmsEnviado();
-
-                } else {
-
-                    Toast.makeText(GlobalData.getAppContext(), "Ha alcanzado el limite de mensajes SMS", Toast.LENGTH_LONG).show();
-
-                }
-
+                sms.sendTextMessage(phoneNumber, null, message, null, null);
 
             }
         } catch (Exception e) {
             AppLog.e("SmsDispatcher", "SMS send error", e);
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("SMS", "envio error");
-            /////////////////////////////////////////////////////
         }
         AppLog.i("SMSSend", phoneNumber + " " + message);
     }

@@ -15,13 +15,12 @@ import android.widget.Toast;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.main.actMain;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sms.SmsLauncher;
-import com.fundacionmagtel.android.teleasistenciaticplus.modelo.Constants;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.GlobalData;
 import com.fundacionmagtel.android.teleasistenciaticplus.modelo.TipoAviso;
 import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppSharedPreferences;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.sound.SintetizadorVoz;
-import com.fundacionmagtel.android.teleasistenciaticplus.lib.stats.StatsFileLogTextGenerator;
+
 
 /**
  * Clase para monitorizar la batería, proporcionando métodos para activarlo y desactivarlo cuando se
@@ -135,13 +134,6 @@ public class MonitorBateria
                         AppLog.i(TAG + ".onReceive()", "Recogido nivel = " + getNivel() +
                                 " y estado = " + textoEstado());
 
-                        if ( Constants.STATS_LOG_BATERIA )
-						{
-                            /////////////////////////////////////////////////////
-                            StatsFileLogTextGenerator.write("bateria", "nivel: " + nivel + " estado: " + textoEstado() + " tasa de refresco: " + tasaRefresco);
-                            /////////////////////////////////////////////////////
-                        }
-						
                         // Guardo el dato de nivel de carga que acabo de leer.
                         guardaUltimoNivel();
 
@@ -241,12 +233,7 @@ public class MonitorBateria
      */
     public void activaReceiver(boolean ahorrar, boolean tostar) // Terminado
     {
-        if ( Constants.STATS_LOG_BATERIA ) {
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("bateria", "reciver activo");
-            /////////////////////////////////////////////////////
-        }
-		
+
         if(getReceiverActivo())
         {
             if(getDesactivarAlRecibir())
@@ -483,10 +470,7 @@ public class MonitorBateria
             // Lanzo también el nivel de batería por voz.
             SintetizadorVoz loro = actMain.getInstance().getSintetizador();
             loro.hablaPorEsaBoquita("¡Atención!. " + textoNivel() + ". Por favor, ponga el móvil a cargar.");
-			
-            /////////////////////////////////////////////////////
-            StatsFileLogTextGenerator.write("bateria", "notificacion bateria baja");
-            /////////////////////////////////////////////////////
+
         }
     }
 

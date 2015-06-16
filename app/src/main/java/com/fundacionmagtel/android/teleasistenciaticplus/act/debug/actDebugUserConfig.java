@@ -50,21 +50,6 @@ public class actDebugUserConfig extends Activity {
     }
 
     /**
-     * Borrado de las appSharedPreferences de numero de SMS enviados
-     *
-     * @param view
-     */
-
-    public void user_config_reiniciar_sms_enviados(View view) {
-
-        new AppSharedPreferences().setPreferenceData(Constants.SMS_ENVIADOS_SHARED_PREFERENCES, String.valueOf(0));
-
-        Toast.makeText(getBaseContext(), "OK",
-                Toast.LENGTH_SHORT).show();
-
-    }
-
-    /**
      * Borrado de las appSharedPreferences de aviso tarificacion
      *
      * @param view
