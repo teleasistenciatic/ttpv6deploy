@@ -83,20 +83,20 @@ public class serviceZonaSegura extends Service implements
 
         //mTimer.scheduleAtFixedRate(new MyTask(), 0, 2000L);
 
-        //Se indica que el servicio está funcionando
-        try {
-            setSharedPreferenceData(Constants.ZONA_SEGURA_SERVICIO_INICIADO, "true");
-        } catch (Exception e) {
-            AppLog.e(TAG,"Error fatal al guardar SharedPreferences",e);
-        }
-
         //show error dialog if GooglePlayServices not available
         if (!isGooglePlayServicesAvailable()) {
             String errorGooglePlay = getResources().getString(R.string.error_google_play_no_zona_segura);
             Toast.makeText(getBaseContext(), errorGooglePlay, Toast.LENGTH_SHORT).show();
             AppLog.e(TAG, errorGooglePlay);
             return; //Salida del servicio
+        }
 
+
+        //Se indica que el servicio está funcionando
+        try {
+            setSharedPreferenceData(Constants.ZONA_SEGURA_SERVICIO_INICIADO, "true");
+        } catch (Exception e) {
+            AppLog.e(TAG,"Error fatal al guardar SharedPreferences",e);
         }
 
         //El servicio sólo funcionará si tenemos una posición guardada de lat/long/radio en las
