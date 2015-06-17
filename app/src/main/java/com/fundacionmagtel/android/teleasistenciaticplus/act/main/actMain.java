@@ -21,6 +21,7 @@ import com.fundacionmagtel.android.teleasistenciaticplus.R;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actMainDebug;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.ducha.actModoDucha;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptions;
+import com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsAbout;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsDatosPersonales;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsPersonaContacto;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.zonasegura.serviceZonaSegura;
@@ -252,7 +253,6 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             showdebug = true;
         }
 
-
         if ( (Constants.DEBUG_LEVEL == DebugLevel.DEBUG) || showdebug) {
             getMenuInflater().inflate(R.menu.menu_act_main, menu);
         } else { //si estamos en modo de producción no mostramos el menu de depuración
@@ -278,6 +278,9 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
             startActivity(intent);
         } else if (id == R.id.menu_act_user_options) {
             Intent intent = new Intent(this, actUserOptions.class);
+            startActivity(intent);
+        } else if (id == R.id.menu_act_user_options_about) {
+            Intent intent = new Intent(this, actUserOptionsAbout.class);
             startActivity(intent);
         }
 

@@ -60,6 +60,7 @@
 
     <!-- Opciones de usuario -->
         <string name="menu_act_user_options">Configuración</string>
+        <string name="menu_act_user_about">Acerca de</string>
 
         <string name="user_options_datos_personales_edit">Datos Personales</string>
         <string name="user_options_datos_personales_correct_edit">Modificación correcta</string>
@@ -134,7 +135,6 @@
     <string name="zona_segura_label_inicial">Zona Segura</string>
     <string name="error_google_play_no_zona_segura">Servicio GooglePlayServices no disponible, se suspende el servicio zona segura</string>
     <string name="error_zona_segura_no_home_set">la función de zona segura requiere establecer el hogar en la configuración</string>
-
     <!-- Fin cadenas Zona Segura -->
 
     <!-- Relacionadas SMS -->
@@ -187,14 +187,31 @@
 
     <!-- Fin Relacionadas Monitor Bateria -->
 
+    <!--
     ////////////////////////////////////////////////////////
     // MANOS LIBRES
-    ////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////// -->
     <!-- Relacionados con Manos Libres -->
     <string name="txt_estado_manos_libres">Estado del Modo Manos Libres</string>
     <string name="txt_menu_user_options_manos_libres_guardar">Recordar esto</string>
     <string name="txt_menu_user_options_manos_libres_salida">Salir de aquí</string>
+    <string name="title_activity_act_user_options_about">Acerca de</string>
     <!-- Fin Relacionados con Manos Libres -->
+
+    <!-- Acerca de -->
+    <string name="txt_acerca_de_titulo">Acerca de</string>
+    <string name="txt_acerca_de_texto_parrafo_1">Proyecto financiado por la Junta de Andalucía
+
+    </string>
+
+    <string name="txt_acerca_de_texto_parrafo_2">
+y el Fondo Social Europeo procedente del
+    </string>
+
+    <string name="txt_acerca_de_texto_parrafo_3">
+Programa Operativo Adaptabilidad y Empleo 2007-2013
+    </string>
+    <!-- Fin acerca de -->
 
 </resources>
 

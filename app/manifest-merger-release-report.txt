@@ -299,7 +299,7 @@ ADDED from AndroidManifest.xml:57:9
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.actLoadingScreen
 ADDED from AndroidManifest.xml:64:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:69:13
+		ADDED from AndroidManifest.xml:70:13
 	android:label
 		ADDED from AndroidManifest.xml:67:13
 	android:relinquishTaskIdentity
@@ -307,280 +307,282 @@ ADDED from AndroidManifest.xml:64:9
 	android:icon
 		ADDED from AndroidManifest.xml:66:13
 	android:theme
-		ADDED from AndroidManifest.xml:70:13
+		ADDED from AndroidManifest.xml:71:13
 	android:name
 		ADDED from AndroidManifest.xml:65:13
+	android:launchMode
+		ADDED from AndroidManifest.xml:69:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:71:13
+ADDED from AndroidManifest.xml:72:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:72:17
+ADDED from AndroidManifest.xml:73:17
 	android:name
-		ADDED from AndroidManifest.xml:72:25
+		ADDED from AndroidManifest.xml:73:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:74:17
+ADDED from AndroidManifest.xml:75:17
 	android:name
-		ADDED from AndroidManifest.xml:74:27
+		ADDED from AndroidManifest.xml:75:27
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.main.actMain
-ADDED from AndroidManifest.xml:79:9
+ADDED from AndroidManifest.xml:80:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:84:13
-	android:label
-		ADDED from AndroidManifest.xml:82:13
-	android:icon
-		ADDED from AndroidManifest.xml:81:13
-	android:theme
 		ADDED from AndroidManifest.xml:85:13
-	android:name
-		ADDED from AndroidManifest.xml:80:13
-	android:logo
+	android:label
 		ADDED from AndroidManifest.xml:83:13
+	android:icon
+		ADDED from AndroidManifest.xml:82:13
+	android:theme
+		ADDED from AndroidManifest.xml:86:13
+	android:name
+		ADDED from AndroidManifest.xml:81:13
+	android:logo
+		ADDED from AndroidManifest.xml:84:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actMainDebug
-ADDED from AndroidManifest.xml:89:9
+ADDED from AndroidManifest.xml:90:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:93:13
+		ADDED from AndroidManifest.xml:94:13
 	android:label
-		ADDED from AndroidManifest.xml:91:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:92:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:93:13
 	android:name
-		ADDED from AndroidManifest.xml:90:13
+		ADDED from AndroidManifest.xml:91:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugMemory
-ADDED from AndroidManifest.xml:95:9
+ADDED from AndroidManifest.xml:96:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:99:13
+		ADDED from AndroidManifest.xml:100:13
 	android:label
-		ADDED from AndroidManifest.xml:97:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:98:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:99:13
 	android:name
-		ADDED from AndroidManifest.xml:96:13
+		ADDED from AndroidManifest.xml:97:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugDataConnection
-ADDED from AndroidManifest.xml:101:9
+ADDED from AndroidManifest.xml:102:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:105:13
+		ADDED from AndroidManifest.xml:106:13
 	android:label
-		ADDED from AndroidManifest.xml:103:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:104:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:105:13
 	android:name
-		ADDED from AndroidManifest.xml:102:13
+		ADDED from AndroidManifest.xml:103:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugCifrado
-ADDED from AndroidManifest.xml:107:9
+ADDED from AndroidManifest.xml:108:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:111:13
+		ADDED from AndroidManifest.xml:112:13
 	android:label
-		ADDED from AndroidManifest.xml:109:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:110:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:111:13
 	android:name
-		ADDED from AndroidManifest.xml:108:13
+		ADDED from AndroidManifest.xml:109:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugShowLog
-ADDED from AndroidManifest.xml:113:9
+ADDED from AndroidManifest.xml:114:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:117:13
+		ADDED from AndroidManifest.xml:118:13
 	android:label
-		ADDED from AndroidManifest.xml:115:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:116:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:117:13
 	android:name
-		ADDED from AndroidManifest.xml:114:13
+		ADDED from AndroidManifest.xml:115:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugSMS
-ADDED from AndroidManifest.xml:119:9
+ADDED from AndroidManifest.xml:120:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:123:13
+	android:label
 		ADDED from AndroidManifest.xml:122:13
-	android:label
+	android:name
 		ADDED from AndroidManifest.xml:121:13
-	android:name
-		ADDED from AndroidManifest.xml:120:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugChronometer
-ADDED from AndroidManifest.xml:124:9
+ADDED from AndroidManifest.xml:125:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:128:13
+		ADDED from AndroidManifest.xml:129:13
 	android:label
-		ADDED from AndroidManifest.xml:126:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:127:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:128:13
 	android:name
-		ADDED from AndroidManifest.xml:125:13
+		ADDED from AndroidManifest.xml:126:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugGoogleServices
-ADDED from AndroidManifest.xml:130:9
+ADDED from AndroidManifest.xml:131:9
 	android:screenOrientation
-		ADDED from AndroidManifest.xml:134:13
+		ADDED from AndroidManifest.xml:135:13
 	android:label
-		ADDED from AndroidManifest.xml:132:13
-	android:parentActivityName
 		ADDED from AndroidManifest.xml:133:13
-	android:name
-		ADDED from AndroidManifest.xml:131:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugGoogleMaps
-ADDED from AndroidManifest.xml:136:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:139:13
-	android:label
-		ADDED from AndroidManifest.xml:138:13
-	android:name
-		ADDED from AndroidManifest.xml:137:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugOjeadorBateria
-ADDED from AndroidManifest.xml:141:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:144:13
-	android:label
-		ADDED from AndroidManifest.xml:143:13
-	android:name
-		ADDED from AndroidManifest.xml:142:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptions
-ADDED from AndroidManifest.xml:151:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:154:13
-	android:label
-		ADDED from AndroidManifest.xml:153:13
-	android:name
-		ADDED from AndroidManifest.xml:152:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsDatosPersonales
-ADDED from AndroidManifest.xml:156:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:159:13
-	android:label
-		ADDED from AndroidManifest.xml:158:13
-	android:name
-		ADDED from AndroidManifest.xml:157:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsPersonaContacto
-ADDED from AndroidManifest.xml:161:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:164:13
-	android:label
-		ADDED from AndroidManifest.xml:163:13
-	android:name
-		ADDED from AndroidManifest.xml:162:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsMonitorBateria
-ADDED from AndroidManifest.xml:167:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:170:13
-	android:label
-		ADDED from AndroidManifest.xml:169:13
-	android:name
-		ADDED from AndroidManifest.xml:168:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsManosLibres
-ADDED from AndroidManifest.xml:173:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:176:13
-	android:label
-		ADDED from AndroidManifest.xml:175:13
-	android:name
-		ADDED from AndroidManifest.xml:174:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugUserConfig
-ADDED from AndroidManifest.xml:179:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:182:13
-	android:label
-		ADDED from AndroidManifest.xml:181:13
-	android:name
-		ADDED from AndroidManifest.xml:180:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugCaidas
-ADDED from AndroidManifest.xml:184:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:187:13
-	android:label
-		ADDED from AndroidManifest.xml:186:13
-	android:name
-		ADDED from AndroidManifest.xml:185:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.presentador.actStaff
-ADDED from AndroidManifest.xml:189:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:192:13
-	android:label
-		ADDED from AndroidManifest.xml:191:13
-	android:name
-		ADDED from AndroidManifest.xml:190:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.ducha.actModoDucha
-ADDED from AndroidManifest.xml:203:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:206:13
-	android:label
-		ADDED from AndroidManifest.xml:205:13
-	android:name
-		ADDED from AndroidManifest.xml:204:13
-activity#com.fundacionmagtel.android.teleasistenciaticplus.act.ducha.actDuchaCuentaAtras
-ADDED from AndroidManifest.xml:208:9
-	android:screenOrientation
-		ADDED from AndroidManifest.xml:212:13
-	android:label
-		ADDED from AndroidManifest.xml:210:13
 	android:parentActivityName
+		ADDED from AndroidManifest.xml:134:13
+	android:name
+		ADDED from AndroidManifest.xml:132:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugGoogleMaps
+ADDED from AndroidManifest.xml:137:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:140:13
+	android:label
+		ADDED from AndroidManifest.xml:139:13
+	android:name
+		ADDED from AndroidManifest.xml:138:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugOjeadorBateria
+ADDED from AndroidManifest.xml:142:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:145:13
+	android:label
+		ADDED from AndroidManifest.xml:144:13
+	android:name
+		ADDED from AndroidManifest.xml:143:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptions
+ADDED from AndroidManifest.xml:152:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:155:13
+	android:label
+		ADDED from AndroidManifest.xml:154:13
+	android:name
+		ADDED from AndroidManifest.xml:153:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsDatosPersonales
+ADDED from AndroidManifest.xml:157:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:160:13
+	android:label
+		ADDED from AndroidManifest.xml:159:13
+	android:name
+		ADDED from AndroidManifest.xml:158:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsPersonaContacto
+ADDED from AndroidManifest.xml:162:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:165:13
+	android:label
+		ADDED from AndroidManifest.xml:164:13
+	android:name
+		ADDED from AndroidManifest.xml:163:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsMonitorBateria
+ADDED from AndroidManifest.xml:168:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:171:13
+	android:label
+		ADDED from AndroidManifest.xml:170:13
+	android:name
+		ADDED from AndroidManifest.xml:169:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsManosLibres
+ADDED from AndroidManifest.xml:174:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:177:13
+	android:label
+		ADDED from AndroidManifest.xml:176:13
+	android:name
+		ADDED from AndroidManifest.xml:175:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugUserConfig
+ADDED from AndroidManifest.xml:180:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:183:13
+	android:label
+		ADDED from AndroidManifest.xml:182:13
+	android:name
+		ADDED from AndroidManifest.xml:181:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugCaidas
+ADDED from AndroidManifest.xml:185:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:188:13
+	android:label
+		ADDED from AndroidManifest.xml:187:13
+	android:name
+		ADDED from AndroidManifest.xml:186:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.presentador.actStaff
+ADDED from AndroidManifest.xml:190:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:193:13
+	android:label
+		ADDED from AndroidManifest.xml:192:13
+	android:name
+		ADDED from AndroidManifest.xml:191:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.ducha.actModoDucha
+ADDED from AndroidManifest.xml:204:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:207:13
+	android:label
+		ADDED from AndroidManifest.xml:206:13
+	android:name
+		ADDED from AndroidManifest.xml:205:13
+activity#com.fundacionmagtel.android.teleasistenciaticplus.act.ducha.actDuchaCuentaAtras
+ADDED from AndroidManifest.xml:209:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:213:13
+	android:label
 		ADDED from AndroidManifest.xml:211:13
+	android:parentActivityName
+		ADDED from AndroidManifest.xml:212:13
 	android:name
-		ADDED from AndroidManifest.xml:209:13
+		ADDED from AndroidManifest.xml:210:13
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from AndroidManifest.xml:213:13
+ADDED from AndroidManifest.xml:214:13
 	android:name
-		ADDED from AndroidManifest.xml:214:17
-	android:value
 		ADDED from AndroidManifest.xml:215:17
+	android:value
+		ADDED from AndroidManifest.xml:216:17
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.actMensajeTarificacionExtraYPoliticaDeUso
-ADDED from AndroidManifest.xml:222:9
+ADDED from AndroidManifest.xml:223:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:226:13
+	android:label
 		ADDED from AndroidManifest.xml:225:13
-	android:label
+	android:name
 		ADDED from AndroidManifest.xml:224:13
-	android:name
-		ADDED from AndroidManifest.xml:223:13
 receiver#com.fundacionmagtel.android.teleasistenciaticplus.act.widget.actWidget
-ADDED from AndroidManifest.xml:230:9
+ADDED from AndroidManifest.xml:231:9
 	android:name
-		ADDED from AndroidManifest.xml:230:19
+		ADDED from AndroidManifest.xml:231:19
 intent-filter#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from AndroidManifest.xml:231:13
+ADDED from AndroidManifest.xml:232:13
 action#android.appwidget.action.APPWIDGET_UPDATE
-ADDED from AndroidManifest.xml:233:17
+ADDED from AndroidManifest.xml:234:17
 	android:name
-		ADDED from AndroidManifest.xml:233:25
+		ADDED from AndroidManifest.xml:234:25
 meta-data#android.appwidget.provider
-ADDED from AndroidManifest.xml:236:13
+ADDED from AndroidManifest.xml:237:13
 	android:resource
+		ADDED from AndroidManifest.xml:239:17
+	android:name
 		ADDED from AndroidManifest.xml:238:17
-	android:name
-		ADDED from AndroidManifest.xml:237:17
 service#com.fundacionmagtel.android.teleasistenciaticplus.lib.detectorCaidas.ServicioMuestreador
-ADDED from AndroidManifest.xml:242:9
+ADDED from AndroidManifest.xml:243:9
 	android:exported
+		ADDED from AndroidManifest.xml:245:13
+	android:name
 		ADDED from AndroidManifest.xml:244:13
-	android:name
-		ADDED from AndroidManifest.xml:243:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsCaidas
-ADDED from AndroidManifest.xml:246:9
+ADDED from AndroidManifest.xml:247:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:250:13
+	android:label
 		ADDED from AndroidManifest.xml:249:13
-	android:label
+	android:name
 		ADDED from AndroidManifest.xml:248:13
-	android:name
-		ADDED from AndroidManifest.xml:247:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.user.actUserOptionsZonaSegura
-ADDED from AndroidManifest.xml:253:9
+ADDED from AndroidManifest.xml:254:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:257:13
+	android:label
 		ADDED from AndroidManifest.xml:256:13
-	android:label
+	android:name
 		ADDED from AndroidManifest.xml:255:13
-	android:name
-		ADDED from AndroidManifest.xml:254:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.zonasegura.actZonaSeguraHomeSet
-ADDED from AndroidManifest.xml:258:9
+ADDED from AndroidManifest.xml:259:9
 	android:screenOrientation
+		ADDED from AndroidManifest.xml:262:13
+	android:label
 		ADDED from AndroidManifest.xml:261:13
-	android:label
+	android:name
 		ADDED from AndroidManifest.xml:260:13
-	android:name
-		ADDED from AndroidManifest.xml:259:13
 service#com.fundacionmagtel.android.teleasistenciaticplus.act.zonasegura.serviceZonaSegura
-ADDED from AndroidManifest.xml:264:9
+ADDED from AndroidManifest.xml:265:9
 	android:process
-		ADDED from AndroidManifest.xml:267:13
+		ADDED from AndroidManifest.xml:268:13
 	android:exported
+		ADDED from AndroidManifest.xml:267:13
+	android:name
 		ADDED from AndroidManifest.xml:266:13
-	android:name
-		ADDED from AndroidManifest.xml:265:13
 activity#com.fundacionmagtel.android.teleasistenciaticplus.act.debug.actDebugGpsSharedPreferences
-ADDED from AndroidManifest.xml:272:9
+ADDED from AndroidManifest.xml:273:9
 	android:label
-		ADDED from AndroidManifest.xml:274:13
+		ADDED from AndroidManifest.xml:275:13
 	android:name
-		ADDED from AndroidManifest.xml:273:13
+		ADDED from AndroidManifest.xml:274:13

@@ -18,7 +18,7 @@
     <!-- Telefono -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
     <!-- Almacenamiento -->
@@ -65,8 +65,8 @@
             android:name=".act.actLoadingScreen"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
-            android:relinquishTaskIdentity="true"
             android:launchMode="singleInstance"
+            android:relinquishTaskIdentity="true"
             android:screenOrientation="portrait"
             android:theme="@style/fullscreen" >
             <intent-filter>
@@ -76,7 +76,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Actividad principal Modo Offline -->
+        <!-- Actividad principal -->
         <activity
             android:name=".act.main.actMain"
             android:icon="@drawable/ic_launcher"
@@ -154,6 +154,14 @@
             android:label="@string/title_activity_act_user_options"
             android:screenOrientation="portrait" >
         </activity>
+
+        <activity
+            android:name=".act.user.actUserOptionsAbout"
+            android:label="@string/title_activity_act_user_options_about"
+            android:parentActivityName=".act.main.actMain"
+            android:screenOrientation="portrait">
+        </activity>
+
         <activity
             android:name=".act.user.actUserOptionsDatosPersonales"
             android:label="@string/title_activity_act_user_options_datos_personales"
@@ -164,19 +172,16 @@
             android:label="@string/title_activity_act_user_options_persona_contacto"
             android:screenOrientation="portrait" >
         </activity>
-
         <activity
             android:name=".act.user.actUserOptionsMonitorBateria"
             android:label="@string/title_activity_act_user_options_monitor_bateria"
             android:screenOrientation="portrait" >
         </activity>
-
         <activity
             android:name=".act.user.actUserOptionsManosLibres"
             android:label="@string/title_activity_act_user_options_manos_libres"
             android:screenOrientation="portrait" >
         </activity>
-
         <activity
             android:name=".act.debug.actDebugUserConfig"
             android:label="@string/title_activity_act_debug_user_config"
@@ -192,7 +197,6 @@
             android:label="equipo emplea30"
             android:screenOrientation="portrait" >
         </activity>
-
 
         <!-- Fin Actividad de opciones de usuario -->
 
@@ -227,9 +231,11 @@
         </activity>
         <!-- Fin mensaje de tarificación extra -->
 
+
         <!-- Receiver del AppWidgetProvider, que es una especialización de BroadcastReceiver -->
         <receiver android:name=".act.widget.actWidget" >
             <intent-filter>
+
                 <!-- Unico action que es necesario declarar explícitamente -->
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

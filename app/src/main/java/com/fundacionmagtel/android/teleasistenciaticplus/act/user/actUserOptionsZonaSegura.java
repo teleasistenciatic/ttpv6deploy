@@ -87,7 +87,7 @@ public class actUserOptionsZonaSegura extends Activity implements ServiceConnect
 
             case R.id.zona_segura_boton_arrancar:
 
-                //El servicio sÛlo funcionar· si tenemos una posiciÛn guardada de lat/long/radio en las
+                //El servicio s√≥lo funcionar√° si tenemos una posici√≥n guardada de lat/long/radio en las
                 //Sharedpreferences
 
                 AppSharedPreferences miAppSharedPreferences = new AppSharedPreferences();
