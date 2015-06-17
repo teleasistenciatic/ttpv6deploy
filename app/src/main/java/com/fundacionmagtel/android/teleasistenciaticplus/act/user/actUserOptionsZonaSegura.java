@@ -100,7 +100,6 @@ public class actUserOptionsZonaSegura extends Activity implements ServiceConnect
                     Toast.makeText(getBaseContext(), errorZonaSegura, Toast.LENGTH_LONG).show();
 
                     AppLog.e(TAG, errorZonaSegura);
-                    return; //Salida del servicio
 
                 } else {
 

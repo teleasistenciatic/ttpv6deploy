@@ -69,6 +69,33 @@ public class serviceZonaSegura extends Service implements
 
 
     /**
+     * Leemos los datos de la zona segura
+     */
+
+    private void leeDatosZonaSegura() {
+
+        AppSharedPreferences miAppSharedPreferences = new AppSharedPreferences();
+
+        boolean hasZonaSeguraGpsPos = miAppSharedPreferences.hasZonaSegura();
+
+        if (!hasZonaSeguraGpsPos) {
+            stopLocationUpdates();
+            miAppSharedPreferences.setPreferenceData(Constants.ZONA_SEGURA_ARRANCAR_AL_INICIO, "false");
+            setSharedPreferenceData(Constants.ZONA_SEGURA_SERVICIO_INICIADO, "false");
+            onDestroy();
+        }
+
+        String[] datosZonaSegura = miAppSharedPreferences.getZonaSeguraData();
+
+        //Leemos de las sharedpreferences y guardamos la posición y
+        //radio de la zona segura
+        zonaSeguraLatitud = Double.parseDouble(datosZonaSegura[0]);
+        zonaSeguraLongitud = Double.parseDouble(datosZonaSegura[1]);
+        zonaSeguraRadio = Double.parseDouble(datosZonaSegura[0]);
+
+    }
+
+    /**
      * Método de framework onCreate
      */
     @Override
@@ -116,13 +143,7 @@ public class serviceZonaSegura extends Service implements
 
         } else { //Existe zona segura
 
-            String[] datosZonaSegura = miAppSharedPreferences.getZonaSeguraData();
-
-            //Leemos de las sharedpreferences y guardamos la posición y
-            //radio de la zona segura
-            zonaSeguraLatitud = Double.parseDouble(datosZonaSegura[0]);
-            zonaSeguraLongitud = Double.parseDouble(datosZonaSegura[1]);
-            zonaSeguraRadio = Double.parseDouble(datosZonaSegura[0]);
+            leeDatosZonaSegura();
 
         }
 
@@ -205,6 +226,7 @@ public class serviceZonaSegura extends Service implements
      */
     @Override
     public void onDestroy() {
+        super.onDestroy();
         /*
         // The service is no longer used and is being destroyed
         if (mTimer != null) {
@@ -308,6 +330,7 @@ public class serviceZonaSegura extends Service implements
     private void checkZonaSegura() {
 
         //AppLog.d(TAG, "Check Zona Segura initiated .............");
+        leeDatosZonaSegura();
 
         if ( mCurrentLocation != null ) {
 

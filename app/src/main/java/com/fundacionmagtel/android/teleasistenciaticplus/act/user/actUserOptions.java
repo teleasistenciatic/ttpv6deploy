@@ -54,7 +54,6 @@ public class actUserOptions extends Activity {
                 R.drawable.caida,
                 R.drawable.areasegura,
                 R.drawable.bateria,
-                R.drawable.ducha,
                 R.drawable.manoslibres
         };
 

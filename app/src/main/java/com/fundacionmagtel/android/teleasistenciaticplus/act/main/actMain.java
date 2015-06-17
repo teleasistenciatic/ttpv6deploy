@@ -2,7 +2,9 @@ package com.fundacionmagtel.android.teleasistenciaticplus.act.main;
 
 
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -160,15 +162,32 @@ public class actMain extends FragmentActivity implements AppDialog.AppDialogNeut
         ////////////////////////////////////////////////
         // Se inicia el servicio Zona Segura
         /////////////////////////////////////////////
-        String zonaSeguraArrancarAlInicio = mispreferences.getPreferenceData(Constants.ZONA_SEGURA_ARRANCAR_AL_INICIO);
 
-        if( zonaSeguraArrancarAlInicio.equals("true") ) {   //si esta indicado arranco el servicio
+        /// Chequeo de un caso posible por el las shared preferences se borrar
+        /// en el momento de lanzar el servicio
+        AppSharedPreferences miAppSharedPreferences = new AppSharedPreferences();
 
-            Intent intentA= new Intent(this, serviceZonaSegura.class);
-            startService(intentA);
+        boolean hasZonaSeguraGpsPos = miAppSharedPreferences.hasZonaSegura();
 
-            AppLog.i(TAG, "Servicio Zona Segura cargado al inicio ");
+        if (!hasZonaSeguraGpsPos) {
 
+            miAppSharedPreferences.setPreferenceData(Constants.ZONA_SEGURA_ARRANCAR_AL_INICIO, "false");
+            SharedPreferences.Editor editor = getSharedPreferences(Constants.APP_SHARED_PREFERENCES_FILE, Context.MODE_MULTI_PROCESS).edit();
+            editor.putString(Constants.ZONA_SEGURA_SERVICIO_INICIADO, "false");
+            editor.commit();
+
+        } else {
+
+            String zonaSeguraArrancarAlInicio = mispreferences.getPreferenceData(Constants.ZONA_SEGURA_ARRANCAR_AL_INICIO);
+
+            if (zonaSeguraArrancarAlInicio.equals("true")) {   //si esta indicado arranco el servicio
+
+                Intent intentA = new Intent(this, serviceZonaSegura.class);
+                startService(intentA);
+
+                AppLog.i(TAG, "Servicio Zona Segura cargado al inicio ");
+
+            }
         }
 
 
