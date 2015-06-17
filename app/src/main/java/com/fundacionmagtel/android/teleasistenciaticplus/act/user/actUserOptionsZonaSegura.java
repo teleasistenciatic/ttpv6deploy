@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.act.zonasegura.actZonaSeguraHomeSet;
 import com.fundacionmagtel.android.teleasistenciaticplus.act.zonasegura.serviceZonaSegura;
@@ -86,15 +87,33 @@ public class actUserOptionsZonaSegura extends Activity implements ServiceConnect
 
             case R.id.zona_segura_boton_arrancar:
 
-                /////////////////////// ARRANCAR EL SERVICIO ////////////////////////////////
-                //bindService(new Intent(this, serviceZonaSegura.class), mConnection, getApplicationContext().BIND_AUTO_CREATE);
+                //El servicio sólo funcionará si tenemos una posición guardada de lat/long/radio en las
+                //Sharedpreferences
 
-                Intent intentA=new Intent(this, serviceZonaSegura.class);
-                startService(intentA);
+                AppSharedPreferences miAppSharedPreferences = new AppSharedPreferences();
 
-                AppLog.d(TAG, "Servicio Iniciado");
-                texto.setText(R.string.zona_segura_texto_estado_activo);
-                //////////////////////////////////////////////////////////////////////////
+                boolean hasZonaSeguraGpsPos = miAppSharedPreferences.hasZonaSegura();
+
+                if (!hasZonaSeguraGpsPos) {
+
+                    String errorZonaSegura = getResources().getString(R.string.error_zona_segura_no_home_set);
+                    Toast.makeText(getBaseContext(), errorZonaSegura, Toast.LENGTH_LONG).show();
+
+                    AppLog.e(TAG, errorZonaSegura);
+                    return; //Salida del servicio
+
+                } else {
+
+                    /////////////////////// ARRANCAR EL SERVICIO ////////////////////////////////
+                    //bindService(new Intent(this, serviceZonaSegura.class), mConnection, getApplicationContext().BIND_AUTO_CREATE);
+
+                    Intent intentA = new Intent(this, serviceZonaSegura.class);
+                    startService(intentA);
+
+                    AppLog.d(TAG, "Servicio Iniciado");
+                    texto.setText(R.string.zona_segura_texto_estado_activo);
+                    //////////////////////////////////////////////////////////////////////////
+                }
 
                 break;
 

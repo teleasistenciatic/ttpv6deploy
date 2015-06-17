@@ -143,7 +143,7 @@ public class SmsTextGenerator {
      */
     private String addDateText(String mensaje) {
 
-        String currentDate = new AppTime("dd/MM/yy:HH:mm:ss").getTimeDate();
+        String currentDate = new AppTime("dd/MM/yy HH:mm:ss").getTimeDate();
 
         return mensaje + " " + currentDate;
 

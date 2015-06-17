@@ -95,7 +95,7 @@ public interface Constants {
 
     public static final boolean TOAST_DATOS_ZONA_SEGURA = false; //Mostrar o no los datos de la zona segura
 
-    public static final int DEFAULT_ZONA_SEGURA_POOL = 12; //El tamaño de pool del FIFO
+    public static final int DEFAULT_ZONA_SEGURA_POOL = 5; //El tamaño de pool del FIFO
 
     public static final double DEFAULT_LATITUDE = 37.886;
     public static final double DEFAULT_LONGITUDE = -4.7486;

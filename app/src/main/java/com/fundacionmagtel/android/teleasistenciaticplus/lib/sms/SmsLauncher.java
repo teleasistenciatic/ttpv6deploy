@@ -61,12 +61,12 @@ public class SmsLauncher {
                     case CAIDADETECTADA:
 
 
-                        //textoSms= new SmsTextGenerator().getTextGenerateSmsCaida(telefonos[i]);
+                        textoSms= new SmsTextGenerator().getTextGenerateSmsCaida(telefonos[i]);
                         break;
 
                     case SALIDAZONASEGURA:
 
-                        //textoSms= new SmsTextGenerator().getTextGenerateSmsSalidaZonaSegura( telefonos[i] );
+                        textoSms= new SmsTextGenerator().getTextGenerateSmsSalidaZonaSegura( telefonos[i] );
                         break;
 
                     case SINBATERIA:
@@ -85,6 +85,8 @@ public class SmsLauncher {
                     case AVISO:
                     case IAMOK:
                     case SINBATERIA:
+                    case CAIDADETECTADA:
+                    case SALIDAZONASEGURA:
 
                         AppLog.i("TAG", "Envío \"fisico\" del SMS");
                         new SmsDispatcher(telefonos[i], textoSms).send();

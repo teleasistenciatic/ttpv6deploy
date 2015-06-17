@@ -385,14 +385,14 @@ public class serviceZonaSegura extends Service implements
             ////////////////////////////////////////////////////////////////////////
 
             //AppLog.d(TAG, mostrar);
-            //AppLog.d(TAG, mostrar);
 
             //Si estamos en modo depuración se indica
             if ( (Constants.PLAY_SOUNDS) && (Constants.DEBUG_LEVEL == DebugLevel.DEBUG)) {
                 PlaySound.play(R.raw.zonasegura_gps_leido);
             }
 
-            if ( (Constants.DEBUG_LEVEL == DebugLevel.DEBUG) && (Constants.TOAST_DATOS_ZONA_SEGURA)) {
+            //if ( (Constants.DEBUG_LEVEL == DebugLevel.DEBUG) && (Constants.TOAST_DATOS_ZONA_SEGURA)) {
+            if ( Constants.TOAST_DATOS_ZONA_SEGURA)  {
                 Toast.makeText(getBaseContext(), (String) mostrar,
                         Toast.LENGTH_LONG).show();
             }
