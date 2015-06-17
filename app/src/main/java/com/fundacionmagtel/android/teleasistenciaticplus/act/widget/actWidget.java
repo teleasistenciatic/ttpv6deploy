@@ -84,10 +84,12 @@ public class actWidget extends AppWidgetProvider
         Bundle datosWidget;
 
         widgetIntent = new Intent(context,actLoadingScreen.class);
+        widgetIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        widgetIntent.addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 
         //widgetIntent = new Intent(context,actMain.class);
         widgetPendingIntent = PendingIntent.getActivity(context, widgetId, widgetIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT );
+                PendingIntent.FLAG_CANCEL_CURRENT );
 
         // Recupero las vistas del layout del widget
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.layout_widget);
