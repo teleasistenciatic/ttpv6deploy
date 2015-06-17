@@ -199,18 +199,17 @@
     <!-- Fin Relacionados con Manos Libres -->
 
     <!-- Acerca de -->
-    <string name="txt_acerca_de_titulo">Acerca de</string>
-    <string name="txt_acerca_de_texto_parrafo_1">Proyecto financiado por la Junta de Andalucía
+    <string name="txt_acerca_de_titulo">Proyecto</string>
+    <string name="txt_acerca_de_texto_parrafo_1">Proyecto financiado por la Junta de Andalucía</string>
 
-    </string>
+    <string name="txt_acerca_de_texto_parrafo_2">y el Fondo Social Europeo procedente del</string>
 
-    <string name="txt_acerca_de_texto_parrafo_2">
-y el Fondo Social Europeo procedente del
-    </string>
+    <string name="txt_acerca_de_texto_parrafo_3">Programa Operativo Adaptabilidad y Empleo 2007-2013</string>
 
-    <string name="txt_acerca_de_texto_parrafo_3">
-Programa Operativo Adaptabilidad y Empleo 2007-2013
-    </string>
+    <string name="txt_acerca_de_titulo_2">Centros colaboradores</string>
+
+    <string name="txt_acerca_de_titulo_3">Desarrollo y ejecución</string>
+
     <!-- Fin acerca de -->
 
 </resources>

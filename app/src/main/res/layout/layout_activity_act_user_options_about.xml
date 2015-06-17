@@ -63,5 +63,56 @@
             android:layout_marginTop="10sp"
             android:src="@drawable/logo_emplea_30_250" />
 
+        <TextView
+            android:layout_marginTop="20sp"
+            android:id="@+id/txt_acerca_de_titulo_label_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_acerca_de_titulo_2"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/acercade_linea_2"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/acerca_de_entidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_marginTop="20sp"
+            android:id="@+id/txt_acerca_de_titulo_label_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_acerca_de_titulo_3"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/acercade_linea_3"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#000000" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:src="@drawable/loadingscreen_funmagtel" />
+
+        <TextView
+            android:id="@+id/acerca_de_desarrollo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:textSize="12sp"/>
+
     </LinearLayout>
 </ScrollView>
