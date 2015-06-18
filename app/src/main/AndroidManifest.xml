@@ -65,7 +65,7 @@
             android:name=".act.actLoadingScreen"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
-            android:launchMode="singleInstance"
+            android:launchMode="singleTask"
             android:relinquishTaskIdentity="true"
             android:screenOrientation="portrait"
             android:theme="@style/fullscreen" >
