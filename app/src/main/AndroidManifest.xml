@@ -71,7 +71,6 @@
             android:theme="@style/fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -83,7 +82,8 @@
             android:label="@string/title_activity_act_main"
             android:logo="@drawable/ic_launcher"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" >
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".act.actLoadingScreen">
         </activity>
 
         <!-- Actividad principal Debug -->
@@ -120,7 +120,8 @@
         <activity
             android:name=".act.debug.actDebugSMS"
             android:label="@string/title_activity_act_debug_sms"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.debug.actMainDebug">
         </activity>
         <activity
             android:name=".act.debug.actDebugChronometer"
@@ -137,12 +138,31 @@
         <activity
             android:name=".act.debug.actDebugGoogleMaps"
             android:label="@string/title_activity_act_debug_google_maps"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.debug.actMainDebug">
         </activity>
         <activity
             android:name=".act.debug.actDebugOjeadorBateria"
             android:label="@string/title_activity_act_debug_monitor_bateria"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.debug.actMainDebug">
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugGpsSharedPreferences"
+            android:label="@string/title_activity_act_debug_gps_shared_preferences"
+            android:parentActivityName=".act.debug.actMainDebug">
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugUserConfig"
+            android:label="@string/title_activity_act_debug_user_config"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.debug.actMainDebug"  >
+        </activity>
+        <activity
+            android:name=".act.debug.actDebugCaidas"
+            android:label="@string/title_activity_act_debug_caidas"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.debug.actMainDebug">
         </activity>
         <!-- Fin actividades Depuración -->
 
@@ -152,7 +172,8 @@
         <activity
             android:name=".act.user.actUserOptions"
             android:label="@string/title_activity_act_user_options"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.main.actMain">
         </activity>
 
         <activity
@@ -165,33 +186,28 @@
         <activity
             android:name=".act.user.actUserOptionsDatosPersonales"
             android:label="@string/title_activity_act_user_options_datos_personales"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptions">
         </activity>
         <activity
             android:name=".act.user.actUserOptionsPersonaContacto"
             android:label="@string/title_activity_act_user_options_persona_contacto"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.main.actMain">
         </activity>
         <activity
             android:name=".act.user.actUserOptionsMonitorBateria"
             android:label="@string/title_activity_act_user_options_monitor_bateria"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptions">
         </activity>
         <activity
             android:name=".act.user.actUserOptionsManosLibres"
             android:label="@string/title_activity_act_user_options_manos_libres"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptions">
         </activity>
-        <activity
-            android:name=".act.debug.actDebugUserConfig"
-            android:label="@string/title_activity_act_debug_user_config"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name=".act.debug.actDebugCaidas"
-            android:label="@string/title_activity_act_debug_caidas"
-            android:screenOrientation="portrait" >
-        </activity>
+
         <activity
             android:name=".presentador.actStaff"
             android:label="equipo emplea30"
@@ -208,7 +224,8 @@
         <activity
             android:name=".act.ducha.actModoDucha"
             android:label="@string/title_activity_act_modo_ducha"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.main.actMain">
         </activity>
         <activity
             android:name=".act.ducha.actDuchaCuentaAtras"
@@ -227,7 +244,8 @@
         <activity
             android:name=".act.actMensajeTarificacionExtraYPoliticaDeUso"
             android:label="@string/title_activity_act_mensaje_tarificacion_extra"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.actLoadingScreen">
         </activity>
         <!-- Fin mensaje de tarificación extra -->
 
@@ -253,19 +271,22 @@
         <activity
             android:name=".act.user.actUserOptionsCaidas"
             android:label="@string/title_activity_act_user_options_caidas"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptions">
         </activity>
 
         <!-- Actividad y servicio de Zona Segura -->
         <activity
             android:name=".act.user.actUserOptionsZonaSegura"
             android:label="@string/title_activity_act_user_options_zona_segura"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptions">
         </activity>
         <activity
             android:name=".act.zonasegura.actZonaSeguraHomeSet"
             android:label="@string/title_activity_act_zona_segura_set_home"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".act.user.actUserOptionsZonaSegura">
         </activity>
 
         <service
@@ -276,10 +297,7 @@
         </service>
         <!-- Fin actividad y servicio de Zona Segura -->
 
-        <activity
-            android:name=".act.debug.actDebugGpsSharedPreferences"
-            android:label="@string/title_activity_act_debug_gps_shared_preferences" >
-        </activity>
+
 
     </application>
 
