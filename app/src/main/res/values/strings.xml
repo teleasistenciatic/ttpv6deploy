@@ -68,7 +68,7 @@
 
         <string name="user_options_contactos_edit">Personas de contacto</string>
         <string name="user_options_contactos_empty_edit">Introduzca al menos un contacto</string>
-
+        <string name="user_options_contactos_empty_phone">El contacto seleccionado no tiene número de teléfono</string>
 
     <string name="user_options_persona_contacto_label">Persona de contacto (pulse para cambiar)</string>
 

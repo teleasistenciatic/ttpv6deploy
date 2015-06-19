@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppDialog;
 import com.fundacionmagtel.android.teleasistenciaticplus.lib.helper.AppLog;
@@ -97,7 +96,7 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.menu_user_options_persona_contacto_exit_app) {
-            finish();
+            onBackPressed();
             return true;
         }
 
@@ -217,13 +216,24 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
 
                     contactDataMap = new PhoneContacts(data).getPhoneContact();
 
-                    textedit.setText(contactDataMap.get("displayName").toString());
-                    texteditName.setText(contactDataMap.get("phoneNumber").toString());
+                    if (contactDataMap.get("phoneNumber").toString().length()>0) {
 
-                    ImageButton borradoTexteditName = (ImageButton) findViewById(R.id.button_user_options_persona_contacto_1_borrar);
-                    borradoTexteditName.setVisibility(View.VISIBLE);
+                        textedit.setText(contactDataMap.get("displayName").toString());
+                        texteditName.setText(contactDataMap.get("phoneNumber").toString());
 
-                    AppLog.i("Contactos", contactDataMap.toString());
+                        ImageButton borradoTexteditName = (ImageButton) findViewById(R.id.button_user_options_persona_contacto_1_borrar);
+                        borradoTexteditName.setVisibility(View.VISIBLE);
+
+                        AppLog.i("Contactos", contactDataMap.toString());
+
+                    } else {
+
+                        showDialogNoContactPhone();
+
+                        textedit.setText("");
+                        texteditName.setText("");
+
+                    }
                 }
                 break;
 
@@ -232,13 +242,25 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
 
                     contactDataMap = new PhoneContacts(data).getPhoneContact();
 
-                    textedit1.setText(contactDataMap.get("displayName").toString());
-                    texteditName1.setText(contactDataMap.get("phoneNumber").toString());
+                    if ( contactDataMap.get("phoneNumber").toString().length()>0 ) {
 
-                    ImageButton borradoTexteditName = (ImageButton) findViewById(R.id.button_user_options_persona_contacto_2_borrar);
-                    borradoTexteditName.setVisibility(View.VISIBLE);
+                        textedit1.setText(contactDataMap.get("displayName").toString());
+                        texteditName1.setText(contactDataMap.get("phoneNumber").toString());
 
-                    AppLog.i("Contactos", contactDataMap.toString());
+                        ImageButton borradoTexteditName = (ImageButton) findViewById(R.id.button_user_options_persona_contacto_2_borrar);
+                        borradoTexteditName.setVisibility(View.VISIBLE);
+
+                        AppLog.i("Contactos", contactDataMap.toString());
+
+                    } else {
+
+                        showDialogNoContactPhone();
+
+                        textedit1.setText("");
+                        texteditName1.setText("");
+
+                    }
+
 
                 }
                 break;
@@ -248,6 +270,8 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
 
                     contactDataMap = new PhoneContacts(data).getPhoneContact();
 
+                    if ( contactDataMap.get("phoneNumber").toString().length() > 0 ) {
+
                     textedit2.setText(contactDataMap.get("displayName").toString());
                     texteditName2.setText(contactDataMap.get("phoneNumber").toString());
 
@@ -255,6 +279,15 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
                     borradoTexteditName.setVisibility(View.VISIBLE);
 
                     AppLog.i("Contactos", contactDataMap.toString());
+
+                    } else {
+
+                        showDialogNoContactPhone();
+
+                        textedit2.setText("");
+                        texteditName2.setText("");
+
+                    }
 
                 }
                 break;
@@ -277,6 +310,19 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
                 textedit2.getText().toString(), texteditName2.getText().toString()
         );
 
+    }
+
+    public void showDialogNoContactPhone() {
+        /////////
+        //Feedback para que introduzca valores de nombre y apellidos
+        /////////
+        AppDialog newFragment = AppDialog.newInstance(AppDialog.tipoDialogo.SIMPLE,1,
+                getResources().getString(R.string.user_options_contactos_edit),
+                getResources().getString(R.string.user_options_contactos_empty_phone),
+                getResources().getString(R.string.close_window),
+                "sin_uso");
+        newFragment.show(getFragmentManager(),"dialog");
+        //Fin del mensaje de información
     }
 
     public void user_options_persona_contacto_salir_button(View view) {
@@ -329,6 +375,5 @@ public class actUserOptionsPersonaContacto extends FragmentActivity implements A
         } else {
             finish();
         }
-
     }
 }
