@@ -17,14 +17,12 @@ public class actUserOptionsAbout extends Activity {
         TextView listaEntidades = (TextView) findViewById(R.id.acerca_de_entidades);
 
         String listaColaboradoresHtml =
-                "   <p>C.M. Duque de la Victoria (D. Centro)" +
-                        " <br>C.M. Alcázar Viejo " +
+                "   <p>" +
                         " <br>C.M. Osario Romano (D. Sur) " +
                         " <br>C.M. Antonio Pareja (D. Norte Sierra) " +
                         " <br>C.M. Levante (D. Levante) " +
                         " <br>C.M. Huerta de la Reina - Tablero (D. Noroeste)" +
                         " <br>C.M. La Foggarilla (D. Poniente Norte)" +
-                        " <br>C.M. Ciudad Jardín (D. Poniente Sur)" +
                         " <br>C.M. El Higuerón (D. Periurbano Oeste) " +
                         " <br>C.M. Villarrubia (D. Periurbano Oeste)" +
                         " <br>C.M. Alcolea (D. Periurbano Este)</p>" +
