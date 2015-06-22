@@ -8,8 +8,9 @@
         Android 4.1, 4.1.1	16	JELLY_BEAN
     -->
     <uses-sdk
-        android:maxSdkVersion="21"
         android:minSdkVersion="16" />
+
+    <!-- android:maxSdkVersion="21" -->
 
     <!-- Permisos -->
     <uses-permission android:name="android.permission.INTERNET" />
